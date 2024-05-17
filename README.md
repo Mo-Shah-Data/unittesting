@@ -1,6 +1,9 @@
 # unittesting
 unittesting in python
 
+Next week
+Write unit test in 3 differrnt libraries and choose and why?
+
 First resource
 https://realpython.com/python-testing/
 
