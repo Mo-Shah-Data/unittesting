@@ -1,6 +1,8 @@
 # unittesting
 unittesting in python
 
+Read the Pragmatic Programmer book - testing chapter
+
 First resource
 https://realpython.com/python-testing/
 
