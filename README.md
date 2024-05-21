@@ -3,6 +3,9 @@ unittesting in python
 
 Read the Pragmatic Programmer book - testing chapter
 
+First main resource
+https://learning.oreilly.com/library/view/python-testing-with/9781680509427/
+
 First resource
 https://realpython.com/python-testing/
 
