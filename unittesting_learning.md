@@ -21,4 +21,9 @@ notes
 7. Use f strings as best practice
 8. You coudl create a folder called test where all test files are located, but you need python to treat it as a package.
 Therefore it needs a file called   __init__.py
-9. 
+
+Types of unit tests and test cases
+
+1. Passing Test
+2. Failing Test - Cover Responding to a failed test
+3. Testing a class
