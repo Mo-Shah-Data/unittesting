@@ -39,3 +39,7 @@ pytest
 
 ## Assertion helper functions
 
+
+# Main learning form Python crash course book
+
+
