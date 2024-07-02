@@ -20,9 +20,23 @@ def test_add_values_list_and_create_heap():
 def test_add_to_heap():
     assert len(uts.add_to_heap()) == 10
 
-#
+def test_check_heap_for_specific_value():
+    heap = uts.add_values_list_and_create_heap()
+    # heap should contain 1002
+    assert 1002 in heap
+
+def test_check_heap_for_non_value():
+    with pytest.raises(AssertionError):
+        heap = uts.add_values_list_and_create_heap()
+        # heap should contain 1002
+        assert 100222 in heap
+
+
+##now write these in another framework
+
+
 # def test_structure_not_empty():
-#     assert strucure is not empty
+#     assert
 #
 # def test_structure_inserts():
 #     assert struture inserts
