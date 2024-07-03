@@ -1,4 +1,6 @@
 Questions and knowledge
+Practice for all data structures
+https://www.geeksforgeeks.org/top-data-structures-that-every-programmer-must-know/
 
 Heaps chapter in the following:
 
@@ -18,3 +20,6 @@ which could be solved.
 
 Use the following resource for easy, medium and hard problems and practice.
 https://www.geeksforgeeks.org/heap-data-structure/?ref=shm
+
+Watch videos from data structures and algorithms course:
+https://learning.oreilly.com/videos/data-structures-and/9781801078504/9781801078504-video10_1/
