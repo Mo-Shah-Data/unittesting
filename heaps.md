@@ -1,4 +1,9 @@
 Questions and knowledge
+
+Learn visual representations of Data Structures and Algorithms:
+https://visualgo.net/en
+
+
 Practice for all data structures
 https://www.geeksforgeeks.org/top-data-structures-that-every-programmer-must-know/
 
@@ -23,3 +28,8 @@ https://www.geeksforgeeks.org/heap-data-structure/?ref=shm
 
 Watch videos from data structures and algorithms course:
 https://learning.oreilly.com/videos/data-structures-and/9781801078504/9781801078504-video10_1/
+
+To do:
+Implement heap sort in test
+implement remove max or min value
+check that min or max value updates
