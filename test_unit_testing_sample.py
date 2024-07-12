@@ -2,13 +2,15 @@ import pytest
 import unit_testing_sample as uts
 import heapq
 
+# create happy, edge and bad cases.
+
 # General Tests
 
-def func(x):
-    return x + 1
+# def func(x):
+#     return x + 1
 
-def test_answer():
-    assert func(3) == 4
+# def test_answer():
+#     assert func(3) == 4
 
 # Testing with heaps
 
@@ -58,14 +60,21 @@ def test_heapushpop_bad(): # test bad case
         popped_value =  heapq.heappushpop(values_list,0.1) == 0.99
         assert popped_value is True
 
-# Todo: The following should be an index error but why can I not apture this?
+
 # # bad case
-# def test_heapreplace():
-#     with pytest.raises(IndexError) as excinfo:
-#         values_list = []
-#         heapq.heapify(values_list)
-#         heapq.heapreplace(values_list, 10)
-#         assert "IndexError" in str(excinfo.value)
+def test_heapreplace():
+    with pytest.raises(IndexError): #as excinfo:
+        values_list = []
+        heapq.heapify(values_list)
+        heapq.heapreplace(values_list, 10)
+        #assert "IndexError" in str(excinfo.value)
+
+@pytest.mark.xfail(raises=IndexError)
+def test_heapreplace_exp_fail():
+        values_list = []
+        heapq.heapify(values_list)
+        heapq.heapreplace(values_list, 10)
+
 
 # happy case
 def test_heapreplace_happy():
@@ -80,45 +89,59 @@ def test_heapreplace_bad():
     heapq.heapreplace(values_list, 10) # value inserted si larger than what is popped
 
 
+def test_merge_happy():
+    values_list_1 = [10, 100, 1000]
+    values_list_2 = [20, 200, 2000]
+    assert list(heapq.merge(values_list_1, values_list_2)) == [10,20,100,200,1000,2000]
+
+def test_merge_edge():
+    values_list_1 = [10, 100, 1000]
+    values_list_2 = [20, 100.001, 2000]
+    assert list(heapq.merge(values_list_1, values_list_2)) == [10,20,100,100.001,1000,2000]
+
+def test_merge_bad():
+    with pytest.raises(TypeError):
+        values_list_1 = [10, 100, 1000]
+        values_list_2 = [20, '200', 2000]
+        test_merge = list(heapq.merge(values_list_1, values_list_2))
+
+def test_nlargest_happy():
+    values_list = [10, 20, 100,30000, 1000, 2000]
+    largest = heapq.nlargest(1,values_list)
+    assert largest[0] == 30000 # list position is used here as that is what is returned
+
+def test_nlargest_bad():
+    with pytest.raises(AssertionError):
+        values_list = [10, 20, 100, 30000, 1000, 2000]
+        largest = heapq.nlargest(1, values_list)
+        assert largest[0] == 10  # list position is used here as that is what is returned
+
+def test_nlargest_edge():
+    values_list = [10, 20, 100, 30000,29999.99, 1000, 2000]
+    largest = heapq.nlargest(1, values_list)
+    assert largest[0] == 30000  # list position is used here as that is what is returned
 
 
 
 
-# create happy, edge and bad cases.
+
+
 
 
 
 # import heapq
 #
-# values_list = []
-# heapq.heapify(values_list)
-# heapq.heapreplace(values_list, 10)
+# values_list_1 = [10,100,1000]
+# values_list_2 = [20,"200",2000]
+# def mergearray(vl1,vl2):
+#     return heapq.merge(values_list_1,values_list_2)
+#
+# test = list(mergearray(values_list_1,values_list_2))
+
+
 #
 # values_list = [1001, 199, 1002, 1003, 0.99, 10, 12, 200, 1004, 1005]
 # heapq.heapify(values_list)
 # popped_value = heapq.heappushpop(values_list, 0.1) == 0.99
 
 
-##now write these in another framework
-
-
-# def test_structure_not_empty():
-#     assert
-#
-# def test_structure_inserts():
-#     assert struture inserts
-#
-# def test_struture_appends():
-#     assert structure appends
-#
-# def test_structure_pops():
-#     assert structure pops
-#
-#
-# # Arguments
-# def test_default_structure_argument():
-#     assert default_arg_output
-#
-# def test_manual_input_argument():
-#     assert manual_input_arg
-#
